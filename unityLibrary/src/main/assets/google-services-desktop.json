@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "631214677895",
+    "firebase_url": "https://piggytravel-818fa.firebaseio.com",
+    "project_id": "piggytravel-818fa",
+    "storage_bucket": "piggytravel-818fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631214677895:android:6e271f3b67baaa45",
+        "android_client_info": {
+          "package_name": "com.aladinfun.piggytravel.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631214677895-139j6paso8on70a18jjra7r6mt679no5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhdhBIUkaOkksjda4AGjNY487Q6WvMfPM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

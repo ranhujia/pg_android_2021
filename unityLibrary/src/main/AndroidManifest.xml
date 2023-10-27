@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.unity3d.player" xmlns:tools="http://schemas.android.com/tools" android:installLocation="preferExternal" android:versionCode="1" android:versionName="1.0">
+  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <!-- 网络通信-->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <!-- 获取网络状态 -->
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <!-- 获取MAC地址-->
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <!-- 获取拉起appcoins的权限-->
+  <queries>
+    <package android:name="com.appcoins.wallet" />
+    <intent>
+      <action android:name="android.intent.action.MAIN" />
+    </intent>
+  </queries>
+  <queries>
+    <package android:name="com.facebook.orca" />
+    <intent>
+      <action android:name="android.intent.action.MAIN" />
+    </intent>
+  </queries>
+  <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> -->
+  <!-- 获取设备信息 Bugly需要使用 高位权限 目前只获取deviceUniqueIdentifier设备唯一码 暂不使用Google推荐问题 -->
+  <!-- <uses-permission android:name="androisd.permission.READ_PHONE_STATE" /> -->
+  <!-- 可选的权限： -->
+  <!-- 获取logcat日志 Bugly需要使用 -->
+  <!-- <uses-permission android:name="android.permission.READ_LOGS" /> -->
+  <!-- Google Play 支付权限-->
+  <uses-permission android:name="com.android.vending.BILLING" />
+  <!-- 用于支持新的 Google install referrer API -->
+  <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+  <!-- AIhelp SDK -->
+  <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+  tools:node="replace" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> -->
+  <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+  <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+  <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="replace" android:maxSdkVersion="32" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+  <!-- Android 12以上的隐私权限 -->
+  <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+  <!-- Mopub SDK -->
+  <!-- <uses-permission android:name="android.permission.WAKE_LOCK" tools:node="remove"/>
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" tools:node="remove"/> -->
+  <!-- 震动权限 -->
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <!-- 定位权限 强制关闭 -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:node="remove" />
+  <!-- 推送闹钟权限 -->
+  <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+  <!-- adjust预安装归因--> &gt; <uses-permission android:name="com.adjust.preinstall.READ_PERMISSION" /><!-- 重定向安全策略配置
+  android:name="androidx.multidex.MultiDexApplication"  --><application android:name="com.DefaultCompany.UnitySDK.MyApplication" android:networkSecurityConfig="@xml/network_security_config_new" tools:replace="android:networkSecurityConfig" android:theme="@style/Theme.AppCompat.Light" android:roundIcon="@drawable/app_icon_round" android:extractNativeLibs="true" android:isGame="true" android:icon="@mipmap/app_icon"><activity android:name="com.aladinfun.piggytravel.android.MainActivity" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density" android:resizeableActivity="false" android:hardwareAccelerated="true" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /><category android:name="android.intent.category.LEANBACK_LAUNCHER" /></intent-filter><intent-filter><action android:name="android.intent.action.VIEW" /><category android:name="android.intent.category.DEFAULT" /><category android:name="android.intent.category.BROWSABLE" /><!-- After testing and testing,
+        I found that if your scheme contains an uppercase character the browser won't be able to
+        launch it. Your scheme should only contain lowercase characters! --><!--
+        https://stackoverflow.com/a/29624722 --><data android:scheme="forever9android" android:host="appgamepiggygo" /></intent-filter><intent-filter><action android:name="android.intent.action.VIEW" /><category android:name="android.intent.category.DEFAULT" /><category android:name="android.intent.category.BROWSABLE" /><!-- After testing and testing,
+        I found that if your scheme contains an uppercase character the browser won't be able to
+        launch it. Your scheme should only contain lowercase characters! --><!--
+        https://stackoverflow.com/a/29624722 --><data android:scheme="forever9piggygo" android:host="appgamepiggygo" /></intent-filter><intent-filter><action android:name="android.intent.action.VIEW" /><category android:name="android.intent.category.DEFAULT" /><category android:name="android.intent.category.BROWSABLE" /><data android:scheme="forever9androidfirebaseace" android:host="appgamepiggygo" /></intent-filter><meta-data android:name="unityplayer.UnityActivity" android:value="true" /><meta-data android:name="FN_MAIN_ACTIVITY" android:value="true" /><meta-data android:name="android.notch_support" android:value="true" /></activity><!--
+    <activity android:name="com.mobilegames.minisdk.activity.GooglePlayBillingActivity"
+    android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+    /> --><!--
+    <activity android:name="com.facebook.unity.FBUnityLoginActivity"
+    android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:name="com.facebook.unity.FBUnityDialogsActivity"
+    android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:name="com.facebook.unity.FBUnityAppLinkActivity" android:exported="true" />
+    <activity android:name="com.facebook.unity.FBUnityDeepLinkingActivity" android:exported="true" />
+    <activity android:name="com.facebook.unity.FBUnityGameRequestActivity" />
+    <activity android:name="com.facebook.unity.FBUnityCreateGameGroupActivity" />
+    <activity android:name="com.facebook.unity.FBUnityJoinGameGroupActivity" />
+    <activity android:name="com.facebook.unity.AppInviteDialogActivity" />
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb616876868660610" />
+    <meta-data android:name="com.facebook.sdk.ClientToken"
+    android:value="52dde824633de9272d7492ed302368d5"/>
+    <provider android:name="com.facebook.FacebookContentProvider"
+    android:authorities="com.facebook.app.FacebookContentProvider616876868660610"
+    android:exported="true" />  --><!--
+    <activity android:name="com.android.billingclient.api.ProxyBillingActivity"
+    android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+    android:exported="false" android:theme="@android:style/Theme.Translucent.NoTitleBar" /> --><!-- FCM --><!--
+    <activity android:name="com.ljoy.chatbot.ChatMainActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:windowSoftInputMode="adjustResize|stateHidden"
+    android:theme="@style/showBgStyleFullscreen" android:screenOrientation="portrait" />
+    <activity android:name="com.ljoy.chatbot.OPActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:windowSoftInputMode="adjustResize|stateHidden"
+    android:theme="@style/showBgStyleFullscreen" android:screenOrientation="portrait" />
+    <activity android:name="com.ljoy.chatbot.FAQActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:windowSoftInputMode="adjustResize|stateHidden"
+    android:theme="@style/showBgStyleFullscreen" android:screenOrientation="portrait" />
+    <activity android:name="com.ljoy.chatbot.WebViewActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:windowSoftInputMode="adjustResize|stateHidden"
+    android:theme="@style/showBgStyleFullscreen" android:screenOrientation="portrait" />
+    <activity android:name="com.ljoy.chatbot.QAWebActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:windowSoftInputMode="adjustResize|stateHidden"
+    android:theme="@style/showBgStyleFullscreen" android:screenOrientation="portrait" />  --><!-- AIhelp
+    SDK end --><!--需要的刘海屏适配 --><!--google刘海适配--><meta-data android:name="android.max_aspect" android:value="2.1" /><!--小米手机开启刘海适配--><meta-data android:name="notch.config" android:value="portrait|landscape" /><!-- 本地推送 --><receiver android:name="net.agasper.unitynotification.UnityNotificationManager" android:exported="true" /><receiver android:name="net.agasper.unitynotification.UnityNotificationActionHandler" android:exported="true" /><meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" /><meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled" android:value="true" /><meta-data android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled" android:value="true" /><meta-data android:name="BUGLY_AREA" android:value="oversea" /><!-- 发行sdk --><meta-data android:name="FN_APP_ID" android:value="\616876868660610" /><meta-data android:name="FN_CGI_PREFIX" android:value="https://mprogram.forevernine.com" /><!--
+    AdMob --><!--
+    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
+    android:value="ca-app-pub-2024491367587369~6281149423" /> --><!-- <activity android:name="com.facebook.unity.FBUnityGamingServicesFriendFinderActivity"
+    android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <receiver
+      android:name="com.unity.androidnotifications.UnityNotificationRestartOnBootReceiver"
+      android:enabled="false" android:exported="true" tools:node="replace">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+    </receiver>
+    <activity
+      android:name="com.facebook.unity.FBUnityLoginActivity"
+      android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity
+      android:name="com.facebook.unity.FBUnityDialogsActivity"
+      android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity
+      android:name="com.facebook.unity.FBUnityAppLinkActivity" android:exported="true" />
+    <activity
+      android:name="com.facebook.unity.FBUnityDeepLinkingActivity" android:exported="true" />
+    <activity
+      android:name="com.facebook.unity.FBUnityGameRequestActivity" />
+    <meta-data
+      android:name="com.facebook.sdk.ApplicationId" android:value="fb616876868660610" />
+    <meta-data
+      android:name="com.facebook.sdk.ClientToken"
+      android:value="52dde824633de9272d7492ed302368d5" />
+    <provider
+      android:name="com.facebook.FacebookContentProvider"
+      android:authorities="com.facebook.app.FacebookContentProvider616876868660610"
+      android:exported="true" /> --><meta-data android:name="unity.splash-mode" android:value="2" /><meta-data android:name="unity.splash-enable" android:value="True" /><meta-data android:name="unity.launch-fullscreen" android:value="True" /><meta-data android:name="unity.allow-resizable-window" android:value="False" /><meta-data android:name="unity.auto-report-fully-drawn" android:value="true" /><receiver android:name="com.unity.androidnotifications.UnityNotificationManager" android:exported="false" /><receiver android:name="com.unity.androidnotifications.UnityNotificationRestartOnBootReceiver" android:enabled="false" android:exported="false"><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED" /></intent-filter></receiver><meta-data android:name="com.unity.androidnotifications.exact_scheduling" android:value="0" /><meta-data android:name="applovin.sdk.key" android:value="KE8aJ8grNGE-UNArwWgq5JswwHtSgut85qhMu97tKmb-nMaoeI2ko_O_Zqc9UcKsyVySTfkgwDQHz5tdl_M00T" /><meta-data android:name="applovin.sdk.verbose_logging" android:value="True" /><meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2024491367587369~6281149423" /></application><uses-feature android:glEsVersion="0x00020000" /><uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" /><uses-feature android:name="android.hardware.touchscreen" android:required="false" /><uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" /><uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" /><uses-permission android:name="android.permission.POST_NOTIFICATIONS" /></manifest>
